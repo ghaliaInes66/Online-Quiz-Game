@@ -1,0 +1,23 @@
+{
+  "name": "online-quiz-game",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000O\u0000n\u0000l\u0000i\u0000n\u0000e\u0000-\u0000Q\u0000u\u0000i\u0000z\u0000-\u0000G\u0000a\u0000m\u0000e\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.0.0",
+    "http-status-codes": "^2.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.1",
+    "nodemon": "^3.0.1",
+    "pug": "^3.0.2"
+  }
+}
