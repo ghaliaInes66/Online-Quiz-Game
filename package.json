@@ -1,10 +1,11 @@
 {
   "name": "online-quiz-game",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000O\u0000n\u0000l\u0000i\u0000n\u0000e\u0000-\u0000Q\u0000u\u0000i\u0000z\u0000-\u0000G\u0000a\u0000m\u0000e\u0000\r\u0000 \u0000",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
   },
   "author": "",
   "license": "ISC",
