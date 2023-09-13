@@ -1,4 +1,4 @@
-﻿# API Design
+# API Design
 ## Authentication
 ### Register
 **Endpoint(URL):** `/api/v1/auth/register` \
@@ -84,44 +84,46 @@ No password or email provided:
     "quizzes": [
       {
         "id": <ID1>,
-        "question": <PATHNAME>,
-        "answers": [
+        "category": <CATEGORY>,
+        "question": <QUESTION>,
+        "options": [
           {
-            "answer": <ANSWER1>,
+            "option": <OPTION1>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER2>,
+            "option": <OPTION2>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER3>,
+            "option": <OPTION3>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER4>,
+            "option": <OPTION4>,
             "isCorrect": <BOOLEAN>
           }
         ]
       },
       {
         "id": <ID2>,
-        "question": <PATHNAME>,
-        "answers": [
+        "category": <CATEGORY>,
+        "question": <QUESTION>,
+        "options": [
           {
-            "answer": <ANSWER1>,
+            "option": <OPTION1>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER2>,
+            "option": <OPTION2>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER3>,
+            "option": <OPTION3>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER4>,
+            "option": <OPTION4>,
             "isCorrect": <BOOLEAN>
           }
         ]
@@ -136,22 +138,23 @@ No password or email provided:
 <em>Request Body</em>
 ```json
   {
+    "category": <CATEGORY>,
     "question": <QUESTION>,
-    "answers": [
+    "options": [
       {
-        "answer": <ANSWER1>,
+        "option": <OPTION1>,
         "isCorrect": <BOOLEAN>
       },
       {
-        "answer": <ANSWER2>,
+        "option": <OPTION2>,
         "isCorrect": <BOOLEAN>
       },
       {
-        "answer": <ANSWER3>,
+        "option": <OPTION3>,
         "isCorrect": <BOOLEAN>
       },
       {
-        "answer": <ANSWER4>,
+        "option": <OPTION4>,
         "isCorrect": <BOOLEAN>
       }
     ]
@@ -163,22 +166,23 @@ No password or email provided:
     "success": "true",
     "quiz": {
       "id": <ID>,
+      "category": <CATEGORY>,
       "question": <QUESTION>,
-      "answers": [
+      "options": [
         {
-          "answer": <ANSWER1>,
+          "option": <OPTION1>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER2>,
+          "option": <OPTION2>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER3>,
+          "option": <OPTION3>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER4>,
+          "option": <OPTION4>,
           "isCorrect": <BOOLEAN>
         }
       ]
@@ -210,22 +214,23 @@ No answers provided:
     "success": "true",
     "quiz": {
       "id": <ID>,
+      "category": <CATEGORY>,
       "question": <QUESTION>,
-      "answers": [
+      "options": [
         {
-          "answer": <ANSWER1>,
+          "option": <OPTION1>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER2>,
+          "option": <OPTION2>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER3>,
+          "option": <OPTION3>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER4>,
+          "option": <OPTION4>,
           "isCorrect": <BOOLEAN>
         }
       ]
@@ -247,28 +252,29 @@ No answers provided:
   }
 ```
 
-### Update Quizz
+### Update Quiz
 **Endpoint(URL):** `/api/v1/quizzes/:id` \
 **Request Method:** <span style="color:grey;">PUT</span> \
 <em>Request Body</em>
 ```json
   {
+    "category": <CATEGORY>,
     "question": <QUESTION>,
-    "answers": [
+    "options": [
       {
-        "answer": <ANSWER1>,
+        "option": <OPTION1>,
         "isCorrect": <BOOLEAN>
       },
       {
-        "answer": <ANSWER2>,
+        "option": <OPTION2>,
         "isCorrect": <BOOLEAN>
       },
       {
-        "answer": <ANSWER3>,
+        "option": <OPTION3>,
         "isCorrect": <BOOLEAN>
       },
       {
-        "answer": <ANSWER4>,
+        "option": <OPTION4>,
         "isCorrect": <BOOLEAN>
       }
     ]
@@ -280,22 +286,23 @@ No answers provided:
     "success": "true",
     "quiz": {
       "id": <ID>,
+      "category": <CATEGORY>,
       "question": <QUESTION>,
       "answers": [
         {
-          "answer": <ANSWER1>,
+          "option": <OPTION1>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER2>,
+          "option": <OPTION2>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER3>,
+          "option": <OPTION3>,
           "isCorrect": <BOOLEAN>
         },
         {
-          "answer": <ANSWER4>,
+          "option": <OPTION4>,
           "isCorrect": <BOOLEAN>
         }
       ]
@@ -339,6 +346,12 @@ No answers provided:
 ### New Solo Game
 **Endpoint(URL):** `/api/v1/solo-games/start` \
 **Request Method:** <span style="color:grey;">POST</span> \
+<em>Request Body</em>
+```json
+  {
+    "category": <CATEGORY>
+  }
+```
 <em style="color:green">Success Response Body</em>
 ```json
   {
@@ -346,44 +359,46 @@ No answers provided:
     "quizzes": [
       {
         "id": <ID1>,
+        "category": <CATEGORY>,
         "question": <PATHNAME>,
-        "answers": [
+        "options": [
           {
-            "answer": <ANSWER1>,
+            "option": <OPTION1>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER2>,
+            "option": <OPTION2>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER3>,
+            "option": <OPTION3>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER4>,
+            "option": <OPTION4>,
             "isCorrect": <BOOLEAN>
           }
         ]
       },
       {
         "id": <ID2>,
+        "category": <CATEGORY>,
         "question": <PATHNAME>,
-        "answers": [
+        "options": [
           {
-            "answer": <ANSWER1>,
+            "option": <OPTION1>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER2>,
+            "option": <OPTION2>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER3>,
+            "option": <OPTION3>,
             "isCorrect": <BOOLEAN>
           },
           {
-            "answer": <ANSWER4>,
+            "option": <OPTION4>,
             "isCorrect": <BOOLEAN>
           }
         ]
