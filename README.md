@@ -73,8 +73,8 @@ No password or email provided:
   }
 ```
 
-## Shortcuts
-### Get All Shortcuts
+## Quizzes
+### Get All Quizzes
 **Endpoint(URL):** `/api/v1/quizzes \
 **Request Method:** <span style="color:grey;">GET</span> \
 <em style="color:green">Success Response Body</em>
@@ -130,7 +130,7 @@ No password or email provided:
   }
 ```
 
-### Create Shortcut
+### Create Quiz
 **Endpoint(URL):** `/api/v1/quizzes` \
 **Request Method:** <span style="color:grey;">POST</span> \
 <em>Request Body</em>
@@ -201,7 +201,7 @@ No answers provided:
   }
 ```
 
-### Get Quizzes
+### Get Quizz
 **Endpoint(URL):** `/api/v1/quizzes/:id` \
 **Request Method:** <span style="color:grey;">GET</span> \
 <em style="color:green">Success Response Body</em>
@@ -247,7 +247,7 @@ No answers provided:
   }
 ```
 
-### Update Quizzes
+### Update Quizz
 **Endpoint(URL):** `/api/v1/quizzes/:id` \
 **Request Method:** <span style="color:grey;">PUT</span> \
 <em>Request Body</em>
@@ -278,7 +278,7 @@ No answers provided:
 ```json
   {
     "success": "true",
-    "shortcut": {
+    "quiz": {
       "id": <ID>,
       "question": <QUESTION>,
       "answers": [
@@ -317,7 +317,7 @@ No answers provided:
   }
 ```
 
-### Delete Quizzes
+### Delete Quiz
 **Endpoint(URL):** `/api/v1/quizzes/:id` \
 **Request Method:** <span style="color:grey;">PUT</span> \
 <em style="color:green">Success Response Body</em>
@@ -332,5 +332,105 @@ No answers provided:
   {
     "success": "false",
     "message": "There is no quiz with ID <ID>!"
+  }
+```
+
+## Solo Game
+### New Solo Game
+**Endpoint(URL):** `/api/v1/solo-games/start` \
+**Request Method:** <span style="color:grey;">POST</span> \
+<em style="color:green">Success Response Body</em>
+```json
+  {
+    "success": "true",
+    "quizzes": [
+      {
+        "id": <ID1>,
+        "question": <PATHNAME>,
+        "answers": [
+          {
+            "answer": <ANSWER1>,
+            "isCorrect": <BOOLEAN>
+          },
+          {
+            "answer": <ANSWER2>,
+            "isCorrect": <BOOLEAN>
+          },
+          {
+            "answer": <ANSWER3>,
+            "isCorrect": <BOOLEAN>
+          },
+          {
+            "answer": <ANSWER4>,
+            "isCorrect": <BOOLEAN>
+          }
+        ]
+      },
+      {
+        "id": <ID2>,
+        "question": <PATHNAME>,
+        "answers": [
+          {
+            "answer": <ANSWER1>,
+            "isCorrect": <BOOLEAN>
+          },
+          {
+            "answer": <ANSWER2>,
+            "isCorrect": <BOOLEAN>
+          },
+          {
+            "answer": <ANSWER3>,
+            "isCorrect": <BOOLEAN>
+          },
+          {
+            "answer": <ANSWER4>,
+            "isCorrect": <BOOLEAN>
+          }
+        ]
+      },
+      ...
+    ]
+  }
+```
+
+## Solo Game
+### End Solo Game
+**Endpoint(URL):** `/api/v1/solo-games/end` \
+**Request Method:** <span style="color:grey;">PUT</span> \
+<em>Request Body</em>
+```json
+  {
+    "score": <SCORE>,
+    "quizzes": [
+      {
+        "quizId": <QUIZID>,
+        "answer": <ANSWER>
+      },
+      {
+        "quizId": <QUIZID>,
+        "answer": <ANSWER>
+      },
+      ...
+    ],
+  }
+```
+<em style="color:green">Success Response Body</em>
+```json
+  {
+    "success": "true",
+    "game": {
+      score: <SCORE>,
+      "quizzes": [
+        {
+          "quizId": <QUIZID>,
+          "rightAnswer": <ANSWER>
+        },
+        {
+          "quizId": <QUIZID>,
+          "rightAnswer": <ANSWER>
+        },
+        ...
+      ]
+    }
   }
 ```
