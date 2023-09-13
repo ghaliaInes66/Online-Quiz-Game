@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const SoloSchema = mongoose.Schema({
+  category: {
+    type : String,
+    required: [true, 'Please provide a category!']
+  },
   score: {
     type: Number,
     default: 0

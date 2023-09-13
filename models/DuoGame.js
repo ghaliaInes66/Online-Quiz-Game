@@ -17,6 +17,10 @@ const DuoSchema = mongoose.Schema({
     type: Number,
     default: 0
   },
+  category: {
+    type : String,
+    required: [true, 'Please provide a category!']
+  },
   quizzes: {
     type: [
       {

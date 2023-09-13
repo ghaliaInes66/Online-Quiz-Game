@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const QuizSchema = mongoose.Schema({
+  category: {
+    type : String,
+    required: [true, 'Please provide a category!']
+  },
   question: {
     type : String,
     required : [true, 'Please provide a question!']
