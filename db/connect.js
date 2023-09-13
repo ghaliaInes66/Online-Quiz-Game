@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = 'mongodb://localhost:27017/mydatabase';
+const url = 'mongodb+srv://zmeddahi2001:3fKQBBDjcjXx6Dvq@cluster0.mfmabgc.mongodb.net/Quiz-Game?retryWrites=true&w=majority';
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
