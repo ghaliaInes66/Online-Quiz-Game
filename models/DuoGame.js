@@ -39,6 +39,6 @@ const DuoSchema = mongoose.Schema({
       }
     ]
   }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('DuoGame', DuoSchema)

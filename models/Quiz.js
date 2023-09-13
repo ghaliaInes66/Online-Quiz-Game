@@ -28,6 +28,6 @@ const QuizSchema = mongoose.Schema({
     type: mongoose.Types.ObjectId,
     required: [true, 'Please provide user Id!']
   }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Quiz', QuizSchema)

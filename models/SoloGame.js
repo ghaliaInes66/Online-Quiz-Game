@@ -27,6 +27,6 @@ const SoloSchema = mongoose.Schema({
     type: mongoose.Types.ObjectId,
     required: [true, 'please provide user id!']
   }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('SoloGame', SoloSchema)
