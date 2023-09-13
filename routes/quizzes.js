@@ -4,7 +4,7 @@ const {
   createQuiz, 
   deleteQuiz, 
   updateQuiz 
-} = require('../controllers/quizes');
+} = require('../controllers/quizzes');
 const router = require('express').Router();
 
 router.route('/').get(getAllQuizzes).post(createQuiz);

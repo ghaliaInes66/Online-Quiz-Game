@@ -28,7 +28,7 @@ app.use(cookieParcer());
 // Import Routers
 const authRouter = require('./routes/auth');
 const pagesRouter = require('./routes/pages');
-const quizzesRouter = require('./routes/quizes');
+const quizzesRouter = require('./routes/quizzes');
 const SoloGamesRouter = require('./routes/soloGames');
 
 // Create Routes
