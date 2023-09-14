@@ -2,7 +2,7 @@ const Quiz = require('../models/Quiz');
 
 const getAllQuizzes = async (req, res) => {
   try {
-    const quizzes = await Quiz.find();
+    const quizzes = await Quiz.find({ createdBy: userId });
     res.status(200).json(quizzes);
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
