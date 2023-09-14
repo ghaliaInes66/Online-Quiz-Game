@@ -24,7 +24,9 @@ const getQuiz = async (req, res) => {
 }
 
 const createQuiz = async (req, res) => {
+  const userId = req.user.id;
   const quizData = req.body;
+  quizData.createdBy = userId;
 
   try {
     const newQuiz = new Quiz(quizData);
