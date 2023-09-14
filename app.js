@@ -1,15 +1,19 @@
 // Initalize App
+const http = require('http');
 const express = require("express");
 const app = express();
+const server = http.createServer(app);
 
 // External Packages
 require('dotenv').config();
 const cookieParcer = require('cookie-parser');
+const io = require('socket.io')(server);
 
 // Local Modules
 const connectDB = require('./db/connect');
 const authMiddleware = require('./middlewares/authentication');
 const errorHandler = require('./middlewares/error-handler');
+const { startDuoGame } = require('./controllers/DuoGames');
 
 // Variables
 const PORT = process.env.PORT || 3000;
@@ -17,7 +21,7 @@ const URI = process.env.MONGO_URI;
 
 // Set Template Engine
 app.set('view engine', 'pug');
-app.set('views', __dirname + './views');
+app.set('views', __dirname + '/views');
 
 // Middlewares
 app.use(express.static(__dirname + '/public'));
@@ -36,10 +40,19 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/quizzes', quizzesRouter);
 app.use('/api/v1/solo-games', SoloGamesRouter);
 
+// Socket
+io.on('connection', (socket) => {
+  console.log(`User connected: ${socket.id}`);
+  startDuoGame(socket);
+  socket.on('disconnect', () => {
+    console.log(`${socket.id} disconnected`);
+  })
+})
+
 // Error Handler Middleware
 app.use(errorHandler);
 
-app.listen(PORT, async () => {
+server.listen(PORT, async () => {
   try {
     await connectDB(URI);
     console.log(`The Server is listening on port ${PORT}`);
