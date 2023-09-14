@@ -12,7 +12,7 @@ const authMiddleware = require('./middlewares/authentication');
 const errorHandler = require('./middlewares/error-handler');
 
 // Variables
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 const URI = process.env.MONGO_URI;
 
 // Set Template Engine
@@ -21,7 +21,6 @@ app.set('views', __dirname + './views');
 
 // Middlewares
 app.use(express.static(__dirname + '/public'));
-// app.use(express.urlencoded({ extended: true })); --> We Don't Need This We'll Use json
 app.use(express.json());
 app.use(cookieParcer());
 
