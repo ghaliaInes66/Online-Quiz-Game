@@ -1,68 +1,74 @@
+const { NotFoundError } = require('../errors');
 const Quiz = require('../models/Quiz');
 
 const getAllQuizzes = async (req, res) => {
   try {
+    const { id: userId } = req.user;
     const quizzes = await Quiz.find({ createdBy: userId });
-    res.status(200).json(quizzes);
+    res.status(200).json({ success: true, quizzes });
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    console.error(error);
   }
 }
 
-const getQuiz = async (req, res) => {
-  const quizId = req.params.id;
-
+const getQuiz = async (req, res, next) => {
   try {
+    const quizId = req.params.id;
     const quiz = await Quiz.findById(quizId);
     if (!quiz) {
-      return res.status(404).json({ error: 'Quiz not found' });
+      const err = new NotFoundError(`There is no Quiz with ID ${quizId}`);
+      return next(err);
     }
-    res.status(200).json(quiz);
+    res.status(200).json({ success: true, quiz });
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    console.error(error);
+    next(error);
   }
 }
 
-const createQuiz = async (req, res) => {
-  const userId = req.user.id;
-  const quizData = req.body;
-  quizData.createdBy = userId;
-
+const createQuiz = async (req, res, next) => {
   try {
+    const userId = req.user.id;
+    const quizData = req.body;
+    quizData.createdBy = userId;
     const newQuiz = new Quiz(quizData);
     await newQuiz.save();
     res.status(201).json(newQuiz);
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    console.error(error);
+    next(error);
   }
 }
 
-const updateQuiz = async (req, res) => {
-  const quizId = req.params.id;
-  const updatedQuizData = req.body;
-
+const updateQuiz = async (req, res, next) => {
   try {
+    const quizId = req.params.id;
+    const updatedQuizData = req.body;
     const quiz = await Quiz.findByIdAndUpdate(quizId, updatedQuizData, { new: true });
     if (!quiz) {
-      return res.status(404).json({ error: 'Quiz not found' });
+      const err = new NotFoundError(`There is no Quiz with ID ${quizId}`);
+      return next(err);
     }
     res.status(200).json(quiz);
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    console.error(error);
+    next(error);
   }
 }
 
-const deleteQuiz = async (req, res) => {
-  const quizId = req.params.id;
-
+const deleteQuiz = async (req, res, next) => {
   try {
+    const quizId = req.params.id;
     const quiz = await Quiz.findByIdAndDelete(quizId);
     if (!quiz) {
-      return res.status(404).json({ error: 'Quiz not found' });
+      const err = new NotFoundError(`There is no Quiz with ID ${quizId}`);
+      return next(err);
     }
-    res.status(204).end(); // No content, successful deletion
+    res.status(200)
+    .json({ success: true, message: `Quiz with ID ${quizId} has been deleted successfully!` });
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    console.error(error);
+    next(error);
   }
 }
 

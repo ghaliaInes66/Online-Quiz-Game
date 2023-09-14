@@ -37,8 +37,8 @@ const SoloGamesRouter = require('./routes/soloGames');
 // Create Routes
 app.use('/', pagesRouter);
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/quizzes', quizzesRouter);
-app.use('/api/v1/solo-games', SoloGamesRouter);
+app.use('/api/v1/quizzes', authMiddleware, quizzesRouter);
+app.use('/api/v1/solo-games', authMiddleware, SoloGamesRouter);
 
 // Socket
 io.on('connection', (socket) => {

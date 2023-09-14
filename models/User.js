@@ -27,7 +27,7 @@ UserSchema.pre('save', async function () {
   this.password = await bcrypt.hash(this.password, salt);
 })
 
-// Custom Functions
+// Custom Mongoose Functions
 UserSchema.methods.createJWT = function () {
   const token = jwt.sign({ id: this._id, username: this.username }, 
     process.env.JWT_SECRET, { expiresIn: process.env.JWT_LIFETIME });
