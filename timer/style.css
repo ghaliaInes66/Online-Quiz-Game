@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins' , sans-serif;
+    display: grid;
+    place-items: center;
+    text-align: end;
+
+}
+
+main{
+    width: 90%;
+    padding: 40px;
+    border: 1px solid #CE91DF;
+    display: grid;
+}
+
+.timer{
+    width: 80%;
+    display: grid;
+    place-items: center;
+    justify-self: center;
+    position: relative;
+}
+
+hr{
+    width: 100%;
+}
+
+.Time{
+    background: linear-gradient(to right, rgb(101, 78, 163), rgb(234, 175, 200));
+    height: 15px;
+    border-radius: 7.5px ;
+    position: absolute;
+    animation: countdown 30s linear;
+    justify-self: start;
+}
+
+@keyframes countdown {
+    from{width: 100%;}
+    to{width: 0;}
+}
