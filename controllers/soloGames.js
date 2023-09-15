@@ -2,7 +2,8 @@ const SoloGame = require('../models/SoloGame');
 
 const startSoloGame = async (req, res) => {
   try {
-    const { category , quizzes ,userId } = req.body;
+    const { category , quizzes } = req.body;
+    const userId = req.user.id;
 
     const newSoloGame = new SoloGame({
       category,
