@@ -1,56 +1,85 @@
 :root{
-    --purple1:#CE91DF;
-    --purple2:#970BBF;
+    --blue:#0D0C1D;
+    --white:rgba(225, 225, 225, .7);
 }
 
 body{
     display: grid;
     place-items: center;
+    background-color: var(--blue);
+    color: var(--white)
 }
 
 main{
     width: 40%;
     height: calc(auto+3px);
-    background-color:var(--purple1) ;
     border-radius: 16px;
     padding: 20px;
-}
-
-h1{
-    text-align: center;
+    display: grid;
+    justify-items: center;
 }
 
 form{
+    width: 90%;
     padding: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.icon-input {
+    display: grid;
+    place-items: center;
+    width: 100%;
 }
 
 input{
+    position: relative;
     margin: 20px;
-    width: 50%;
+    width: 100%;
+    height: 45px;
+    padding: 5px 0 5px 40px;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
     font-size: 15px;
     background-color: transparent;
-    border: none;
-    color: white;
+    border: 1.5px solid var(--white);
+    color: var(--white);
+    border-radius: 15px;
     cursor: pointer;
-    border-bottom: 3px solid var(--purple1);
     transition: all 0.5s
 }
 
+.icon-input img{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    justify-self: start;
+    margin-left: 10px;
+}
+
 input:hover{
-    border-bottom: 3px solid white;
+    border-color: white;
+    color: white;
 }
 
 .submit {
-    margin-left: 85%;
     font-weight: 700;
     font-size: 20px;
-    width: auto;
+    border-color: green;
+    color: green;
+    padding: 0;
+}
+
+.submit:hover{
+    border-color: white;
+    color: white;
+    background-color: green;
 }
 
 p,a{
     font-size: 15px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 span{
@@ -59,19 +88,23 @@ span{
     color: red;
 }
 
+.psw-forget{
+    justify-self: end;
+}
 
-@media (max-width:950px) {
+
+@media (max-width:1350px) {
     main{
-        width: 70%;
+        width: 50%;
     }
 }
 
-@media (max-width:500px) {
+@media (max-width:760px) {
     main{
         width: 90%;
     }
 
-    input{
-        width: 40%;
+    form{
+        width: 100%;
     }
 }

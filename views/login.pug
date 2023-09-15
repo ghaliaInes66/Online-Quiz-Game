@@ -10,17 +10,22 @@ html(lang="en")
         main 
            h1 Login
            form(action="/api/v1/auth/login", method="post") 
-               label(for="email") Email 
-               input(id="email" , type="email", name="email", placeholder="Email" , required) 
-               span.email-error
 
-               label(for="password") Password
-               input(id="password" , type="password", name="password", placeholder="Password" , required)
-               span.password-error
+                .icon-input 
+                  input(id="email" , type="email", name="email", placeholder="Email" , required) 
+                  img(src="/images/envelopes.svg", alt="")
+                span.email-error
+                
+                .icon-input 
+                  input(id="password" , type="password", name="password", placeholder="Password" , required)
+                  img(src="/images/key-skeleton-alt.svg", alt="")
+                a(class="psw-forget" href="#") Forget Password? 
+                span.password-error
         
-               input(id="login",class="submit",type="submit", value="Login")
+                input(id="login",class="submit",type="submit", value="Login")
 
-               p Not have an account?
-               a(href="/register") Sign Up here
+                .signUp 
+                   p  Not A Member Yet? 
+                   a(href="/register")  Sign Up here
         
         script(src="/js/login.js") 
