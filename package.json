@@ -1,7 +1,7 @@
 {
   "name": "online-quiz-game",
   "version": "1.0.0",
-  "description": "",
+  "description": "**Endpoint(URL):** `/api/v1/auth/register` \\\r **Request Method:** <span style=\"color:grey;\">POST</span> \\\r <em>Request Body</em>\r ```json\r   {\r     \"username\": <USERNAME>,\r     \"email\": <EMAIL>,\r     \"password\": <PASSWORD>\r   }\r ```\r <em style=\"color:green\">Success Response Body</em>\r ```json\r   {\r     \"success\": \"true\",\r     \"user\": {\r       \"id\": <ID>,\r       \"username\": <USERNAME>\r     }\r   }\r ```\r <em style=\"color:red\">Failure Response Body (Bad Request)</em>\r ```json\r   {\r     \"success\": \"false\",\r     \"message\": \"Please provide username, email, password!\"\r   }\r ```",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,5 +22,6 @@
     "nodemon": "^3.0.1",
     "pug": "^3.0.2",
     "socket.io": "^4.7.2"
-  }
+  },
+  "keywords": []
 }

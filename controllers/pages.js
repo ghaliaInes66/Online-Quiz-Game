@@ -5,11 +5,11 @@ const dashboard = (req, res) => {
 }
 
 const registerPage = (req, res) => {
-  res.render('fake-register');
+  res.render('signUp');
 }
 
 const loginPage = (req, res) => {
-  res.render('fake-login');
+  res.render('login');
 }
 
 module.exports = {
