@@ -11,29 +11,29 @@ html(lang="en")
         main 
            h1 Sign Up
            form(action="/api/v1/auth/register", method="post") 
-               label(for="username") Username 
-               input(id="username" , type="text", name="username", placeholder="Username" , required)
-               br
+                .icon-input 
+                  input(id="username" , type="text", name="username", placeholder="Username" , required)
+                  img(src="/images/user-circle.svg", alt="")
                
-               label(for="email") Email 
-               input(id="email" , type="email", name="email", placeholder="Email" , required)
-               span.email-error
-
-               label(for="password") Password
-               input(id="password" , type="password", name="password", placeholder="Password" , required)
-               span.password-error
-
-               label(for="password-confi") Confirm password
-               input(id="password-confi" , type="password", name="password-confi", placeholder="confirm Password" , required)
-               span.password-confi-error
-
-               input(id="signUp",class="submit",type="submit", value="Sign Up")
-
-               p By clicking the Sign Up button, you agree to our
-               a(href="#") Terms and Conditions and 
-               a(href="#") Privacy Policy
+                .icon-input 
+                  input(id="email" , type="email", name="email", placeholder="Email" , required) 
+                  img(src="/images/envelopes.svg", alt="")
+                  span.email-error
                
-               p Already have an account?
-               a(href="/login") Login here
+                .icon-input 
+                  input(id="password" , type="password", name="password", placeholder="Password" , required)
+                  img(src="/images/key-skeleton-alt.svg", alt="")
+                span.password-error
+                
+                .icon-input 
+                  input(id="password-confi" , type="password", name="password-confi", placeholder="confirm Password" , required)
+                  img(src="/images/key-skeleton-alt.svg", alt="")
+                span.password-confi-error
+
+                input(id="signUp",class="submit",type="submit", value="Sign Up")
+               
+                .login 
+                   p Already have an account?
+                   a(href="/login") Login here
 
         script(src="/js/signUp.js") 
