@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #efe6fb;
+  /* overflow: hidden; */
+  /* position: relative; */
+}
+.container {
+  position: relative;
+}
+.zone_1 {
+  display: flex;
+}
+.logo > img {
+  margin-left: 100px;
+}
+.zone_2 {
+  margin-left: 150px;
+  margin-top: 30px;
+}
+.zone_2 > .profile_pic > img {
+  margin-bottom: 50px;
+}
+.zone_2 > .user_info {
+  line-height: 35px;
+}
+.zone_2 > .decennexion_btn {
+  margin-top: 40px;
+}
+.zone_2 > .decennexion_btn > a {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ce91df;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.zone_3 {
+  display: grid;
+  grid-auto-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}

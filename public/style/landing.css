@@ -5,6 +5,7 @@
 body {
   font-family: "Nunito", sans-serif;
   background-color: #efe6fb;
+  overflow: hidden;
 }
 .part_1 {
   display: flex;
