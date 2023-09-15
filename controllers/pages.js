@@ -1,19 +1,17 @@
-
-
 const dashboard = (req, res) => {
-  res.render('online');
-}
+  res.render("landing");
+};
 
 const registerPage = (req, res) => {
-  res.render('signUp');
-}
+  res.render("signUp");
+};
 
 const loginPage = (req, res) => {
-  res.render('login');
-}
+  res.render("login");
+};
 
 module.exports = {
   dashboard,
   registerPage,
-  loginPage
-}
+  loginPage,
+};
