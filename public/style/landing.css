@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #efe6fb;
+}
+.part_1 {
+  display: flex;
+}
+.logo > img {
+  margin-left: 100px;
+}
+.button {
+  display: flex;
+  margin-left: 650px;
+  margin-top: 50px;
+}
+.login_button,
+.register_button {
+  margin-right: 30px;
+}
+.login_button > button,
+.register_button > button {
+  border-radius: 20px;
+  background-color: #ce91df;
+  border-color: #ce91df;
+  text-shadow: none;
+  width: 90px;
+  height: 35px;
+  color: white;
+}
+
+.login_button > button:hover,
+.register_button > button:hover {
+  border-radius: 20px;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #ce91df;
+}
+.login_button > button > a:hover,
+.register_button > button > a:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #ce91df;
+}
+.part_2 {
+  position: relative;
+}
+.images > .phone > img {
+  position: absolute;
+  transform: rotate(15deg);
+  left: 750px;
+}
+.images > .pc > img {
+  /* position: absolute; */
+  /* transform: rotate(20deg); */
+  margin-left: 850px;
+  margin-top: 10px;
+}
+.images > .small_hints > .hint_1 > img {
+  position: absolute;
+  left: 730px;
+  top: 20px;
+}
+.images > .small_hints > .hint_2 > img {
+  position: absolute;
+  left: 830px;
+  top: -30px;
+}
+.part_3 > .paragreph > p {
+  position: absolute;
+  left: 100px;
+  top: 180px;
+  width: 400px;
+  height: 500px;
+  font-size: 20px;
+  line-height: 30px;
+}
+.part_3 > .paragreph > p > span {
+  color: #ce91df;
+  font-weight: bold;
+  font-size: 40px;
+  margin-right: 10px;
+}
+.part_3 > .paragreph > p > img {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.start_button > button {
+  position: absolute;
+  left: 130px;
+  top: 430px;
+  border-radius: 20px;
+  background-color: #ce91df;
+  border-color: #ce91df;
+  text-shadow: none;
+  width: 280px;
+  height: 40px;
+}
+.start_button > button > a {
+  text-decoration: none;
+  color: white;
+}

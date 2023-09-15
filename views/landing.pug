@@ -1,0 +1,50 @@
+doctype html
+| PASTE YOUR HTML CODE HERE
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Quiz Game
+  link(rel='stylesheet' href='./../public/style/landing.css')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap' rel='stylesheet')
+body 
+.container
+  .part_1
+    .logo
+      img(src='./../public/images/quiz_logo.gif' alt='Logo' width='200px' height='120px')
+    .button
+      .login_button
+        button#login
+          | login
+      .register_button
+        button#register
+          | Register
+  .part_2
+    .images
+      .phone
+        img(src='./../public/images/phone.png' alt='phone picture' width='240px')
+      .pc
+        img(src='./../public/images/pc.png' alt='pc picture' width='430px')
+      .small_hints
+        .hint_1
+          img(src='./../public/images/quiz1.png' alt='' width='60px' height='60px')
+        .hint_2
+          img(src='./../public/images/quiz2.png' alt='' width='40px' height='40px')
+        .hint_3
+          img(src='' alt='')
+  .part_3
+    .paragreph
+      p
+        span Welcome
+        |  to an exciting world of knowledge and fun! 
+        img(src='./../public/images/fun.png' alt='' width='20px' height='20px')
+        |  Our quiz game is your passport to a
+        |                     thrilling
+        |                     journey of questions, challenges, and discoveries. Whether you&apos;re a trivia master or a curious
+        |                     learner, this game is designed to tickle your brain and keep you entertained.
+    .start_button
+      button
+        a(href='') Start
+
+    script(src="/js/landing.js")
