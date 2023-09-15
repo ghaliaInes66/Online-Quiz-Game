@@ -3,12 +3,27 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="style/fake-game.css")
     script(src="/socket.io/socket.io.js")
     title 
   body 
-    button#start-game Start New Game
-    .quiz 
-      .timer
-      .question 
+    .container
+      button#start-game Start New Game
+      .quiz 
+        .timer 30
+        .question What is the faster language?
+        .options 
+          .option(class="correct") C
+          .option Java
+          .option Pyhton
+          .option(class="incorrect") JavaScript
+        .score 
+          p score
+          div
+            span.you you
+              span.your-score 0
+            span -
+            span.oponent oponent
+              span.oponent-score 0
 
     script(src="js/duoGame.js")

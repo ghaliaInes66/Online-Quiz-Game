@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 95vh;
+  background-color: #0D0C1D;
+  font-family: 'Roboto';
+  color: whitesmoke;
+}
+
+.container {
+  height: 100%;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  width: 100%;
+}
+
+.timer {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.question {
+  color: rgba(245, 245, 245, 0.600);
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.options {
+  margin-top: 20px;
+}
+
+.option {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #A69CAC;
+  border-radius: 10px;
+}
+
+.option:hover {
+  color: #733a92;
+  border: 2px solid #733a92;
+}
+
+.correct {
+  color: rgb(0, 228, 228);
+  border: 2px solid rgb(0, 228, 228);;
+}
+
+.incorrect {
+  color: red;
+  border: 2px solid red;
+}
+
+.score {
+  width: 240px;
+  font-size: 1.4rem;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  left: calc(50% - 120px);
+}
+
+.score > p {
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.score > div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 5px;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+.you > span, .oponent span {
+  margin-left: 10px;
+}
+
+@media (min-width: 700px) {
+  .container {
+    padding: 0 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 30%;
+  }
+}
