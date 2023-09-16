@@ -92,6 +92,18 @@ span{
     justify-self: end;
 }
 
+.error {
+    font-size: 0.8rem;
+    visibility: hidden;
+    color: #F5F3F490;
+    background-color: rgba(255, 0, 0, 0.40);
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #F5F3F450;
+    border-radius: 5px;
+    text-transform: none;
+}
+
 
 @media (max-width:1350px) {
     main{

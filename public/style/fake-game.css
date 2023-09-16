@@ -55,6 +55,11 @@ body {
   border: 2px solid #733a92;
 }
 
+.clicked {
+  color: #733a92;
+  border: 2px solid #733a92;
+}
+
 .correct {
   color: rgb(0, 228, 228);
   border: 2px solid rgb(0, 228, 228);;
@@ -90,6 +95,22 @@ body {
 
 .you > span, .oponent span {
   margin-left: 10px;
+}
+
+.back-home {
+  color: green;
+  background-color: transparent;
+  margin-top: 20px;
+  padding: 5px;
+  border: 3px solid green;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-home:hover {
+  background-color: green;
+  color: whitesmoke;
+  border: 3px solid whitesmoke;
 }
 
 @media (min-width: 700px) {

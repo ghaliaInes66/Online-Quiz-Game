@@ -5,7 +5,7 @@ const authMiddleware = (req, res, next) => {
     const secret = process.env.JWT_SECRET;
     const token = req.cookies['token'];
     if(!token) {
-      return res.redirect('/login');
+      return res.redirect('/public');
     }
     const payload = jwt.verify(token, secret);
     const { id, username } = payload;

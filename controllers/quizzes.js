@@ -33,7 +33,7 @@ const createQuiz = async (req, res, next) => {
     quizData.createdBy = userId;
     const newQuiz = new Quiz(quizData);
     await newQuiz.save();
-    res.status(201).json(newQuiz);
+    res.status(201).json({ success: true, quiz: newQuiz });
   } catch (error) {
     console.error(error);
     next(error);

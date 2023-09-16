@@ -9,7 +9,7 @@ const startDuoGame = (socket) => {
     if(playersWaiting.length > 0) {
       const user = playersWaiting.shift();
       // Get 5 Random Quizzes
-      const randomQuizzes = await Quiz.aggregate([{ $sample: { size: 5 } }]);
+      const randomQuizzes = await Quiz.aggregate([{ $match: { category } }, { $sample: { size: 5 } }]);
       let quizzes = [];
       for(let i = 0; i < 5; i++) {
         quizzes.push({ quizId: randomQuizzes[i]._id });
@@ -24,22 +24,23 @@ const startDuoGame = (socket) => {
         quizzes: quizzes
       })
       await game.save();
+      
+      // const users = {
+      //   firstUser: game.firstUser,
+      //   secondUser: game.secondUser,
+      // }
 
       socket.emit('start game', game);
       user.socket.emit('start game', game);
-      const timer = 30;
+      const timer = 10;
       const numberOfRounds = 5;
-      await startRound(user, socket, quizzes, timer, numberOfRounds);
+      return await startRound(user, socket, quizzes, timer, numberOfRounds, game);
     }
     playersWaiting.push({ userId, socket });
   })
 }
 
-const endDuoGame = (socket) => {
-  
-}
 
 module.exports = {
-  startDuoGame,
-  endDuoGame
+  startDuoGame
 }

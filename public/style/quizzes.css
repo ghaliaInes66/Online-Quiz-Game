@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primaryColor: #162437;
+  --secondaryColor: #0D0C1D;
+}
+
+body {
+  height: 80vh;
+  background-color: var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto';
+  text-transform: capitalize;
+  padding: 0 20px;
+  margin-top: 120px;
+}
+
+body > a {
+  text-decoration: none;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+
+body > p {
+  margin-bottom: 20px;
+  color: #F5F3F490;
+}
+
+section {
+  background-color: #F5F3F440;
+  padding: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+section h2 {
+  color: #F5F3F4;
+  margin-bottom: 25px;
+}
+
+.error {
+  font-size: 0.8rem;
+  visibility: hidden;
+  color: #F5F3F490;
+  background-color: rgba(255, 0, 0, 0.40);
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #F5F3F450;
+  border-radius: 5px;
+  text-transform: none;
+}
+
+.domain, .slash {
+  display: none;
+  text-transform: none;
+  color: gray;
+  background-color: #F5F3F4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input, button {
+  color: #F5F3F4;
+  background-color: transparent;
+  font-size: 1rem;
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #F5F3F4;
+  border-radius: 10px;
+}
+
+button {
+  text-transform: capitalize;
+  color: green;
+  border-color: green;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #F5F3F4;
+  background-color: green;
+  border-color: #F5F3F4;
+}
+
+input:focus {
+  outline: none;
+}
+
+.shortcuts-container {
+  height: 38vh;
+  overflow-y: scroll;
+}
+
+.shortcuts-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.shortcut {
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  background-color: #F5F3F440;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+i {
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 1s linear;
+}
+
+.fa-pen-to-square {
+  margin-left: auto;
+}
+
+#category {
+  background-color: transparent;
+  padding: 5px 2px;
+  border: 1px solid #F5F3F4;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+@media (min-width: 740px) {
+  body > a {
+    right: 50px;
+  }
+
+  .domain, .slash {
+    display: initial;
+  }
+
+  input {
+    width: 500px;
+  }
+}

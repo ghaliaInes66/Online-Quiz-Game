@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/60047068a8.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style/quizzes.css">
+  <title>Quiz | Quizzes </title>
+</head>
+<body>
+  //- <a class="logout" href="https://url-shortener-y7no.onrender.com/api/v1/auth/logout">logout</a>
+  <p>create your own quizzes!</p>
+  <main>
+    <section>
+      <h2>Quizzes</h2>
+      <div class="error">error</div>
+      <form class="card">
+        p Category
+        select(id="category") 
+          option(value="Css") Css
+          option(value="JavaScript") JavaScript
+          option(value="Node.js") Node.js
+          option(value="React.js") React.js
+        <br>
+        input(type="text" id="question" placeholder="Question")
+        div.options
+          input(type="text" class="correct-option" placeholder="Correct Option")
+          input(type="text" class="incorrect-option" placeholder="Incorrect Option")
+          input(type="text" class="incorrect-option" placeholder="Incorrect Option")
+          input(type="text" class="incorrect-option" placeholder="Incorrect Option")
+        button(type="submit" id="submit") submit
+      </form>
+    </section>
+    <div class="shortcuts-container">
+      
+    </div>
+  </main>
+  <script src="js/getQuizzes.js" type="module"></script>
+  <script src="js/createQuiz.js" type="module"></script>
+  <script src="js/removeQuiz.js" type="module"></script>
+  <script src="js/updateQuiz.js" type="module"></script>
+  //- <script src="js/copyShortcut.js" type="module"></script>
+  //- <script src="js/logout.js"></script>
+  //- <script>
+  //-   const errorCard = document.querySelector('.error');
+  //-   window.onclick = () => {
+  //-     errorCard.style.visibility = 'hidden';
+  //-   }
+  //- </script>
+</body>
+</html>

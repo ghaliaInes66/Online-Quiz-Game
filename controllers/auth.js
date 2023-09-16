@@ -49,9 +49,10 @@ const login = async (req, res, next) => {
   }
 }
 
-const logout = () => {
+const logout = (req, res) => {
   res.cookie(token, '', { maxAge: 0 });
-  res.redirect('/login');
+  console.log();
+  res.redirect('/public');
 }
 
 module.exports = {

@@ -33,9 +33,11 @@ const authRouter = require('./routes/auth');
 const pagesRouter = require('./routes/pages');
 const quizzesRouter = require('./routes/quizzes');
 const SoloGamesRouter = require('./routes/soloGames');
+// const publicRouter = require('./routes/public');
 
 // Create Routes
-app.use('/', pagesRouter);
+app.use('/', authMiddleware, pagesRouter);
+// app.use('/public', publicRouter)
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/quizzes', authMiddleware, quizzesRouter);
 app.use('/api/v1/solo-games', authMiddleware, SoloGamesRouter);

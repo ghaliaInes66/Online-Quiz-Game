@@ -8,15 +8,16 @@ html(lang="en")
     title 
   body 
     .container
+      div.searching(style="visibility: hidden;") Searching ...
       button#start-game Start New Game
       .quiz 
         .timer 30
-        .question What is the faster language?
+        .question -----------?
         .options 
-          .option(class="correct") C
-          .option Java
-          .option Pyhton
-          .option(class="incorrect") JavaScript
+          .option -----------
+          .option -----------
+          .option -----------
+          .option -----------
         .score 
           p score
           div
@@ -25,5 +26,8 @@ html(lang="en")
             span -
             span.oponent oponent
               span.oponent-score 0
+      a(href="/home" style="visibility: hidden;" class="back-link") 
+        button(class="back-home") Back To Home
+          
 
     script(src="js/duoGame.js")

@@ -11,7 +11,14 @@ login.onclick = (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ email, password })
-  }).then(response => {
+  }).then(async response => {
+    if(!response.ok) {
+      const err = await response.json();
+      const errorCard = document.querySelector('.error');
+      errorCard.textContent = err.message;
+      errorCard.style.visibility = 'visible';
+      throw Error(err.message);
+    }
     return response.json();
   }).then(data => {
     localStorage.setItem('id', data.user.id);

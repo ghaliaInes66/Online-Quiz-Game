@@ -1,21 +1,11 @@
-const dashboard = (req, res) => {
-  res.render("landing");
-};
 
-const registerPage = (req, res) => {
-  res.render("signUp");
-};
-
-const loginPage = (req, res) => {
-  res.render("login");
-};
 
 const User = require("../models/User");
 
 const home = async (req, res) => {
   try {
-    const id = '65041f031bdbee233e8ba12f';
-    const user = await User.findById(id);
+    const userId = req.user.id;
+    const user = await User.findById(userId);
 
     res.render("home", { user });
   } catch (error) {
@@ -25,9 +15,11 @@ const home = async (req, res) => {
   }
 };
 
+const duoGamePage = (req, res) => {
+  res.render("online");
+};
+
 module.exports = {
-  dashboard,
-  registerPage,
-  loginPage,
-  home
+  home,
+  duoGamePage
 };

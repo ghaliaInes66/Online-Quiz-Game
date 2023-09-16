@@ -36,10 +36,10 @@ hr{
     width: 100%;
 }
 
-.Time{
+.Time {
     background: linear-gradient(to right, rgb(101, 78, 163), rgb(234, 175, 200));
     height: 15px;
-    border-radius: 7.5px ;
+    border-radius: 7.5px;
     position: absolute;
     animation: countdown 30s linear;
     justify-self: start;
