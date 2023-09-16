@@ -17,37 +17,37 @@ const startreact=document.querySelector('.start-react');
 
 starthtml.addEventListener('click' , () => {
     localStorage.setItem('category','html');
-    location.href = 'duo-game';
+    location.href = '../pages/duo-game';
 })
 
 startcss.addEventListener('click' , () => {
     localStorage.setItem('category','css');
-    location.href = 'duo-game';
+    location.href = '../pages/duo-game';
 })
 
 startjs.addEventListener('click' , () => {
     localStorage.setItem('category','js');
-    location.href = 'duo-game';
+    location.href = '../pages/duo-game';
 })
 
 startgit.addEventListener('click' , () => {
     localStorage.setItem('category','git');
-    location.href = 'duo-game';
+    location.href = '../pages/duo-game';
 })
 
 startc.addEventListener('click' , () => {
     localStorage.setItem('category','c');
-    location.href = 'duo-game';
+    location.href = '../pages/duo-game';
 })
 
 startnode.addEventListener('click' , () => {
     localStorage.setItem('category','nodeJs');
-    location.href = 'duo-game';
+    location.href = '../pages/duo-game';
 })
 
 startreact.addEventListener('click' , () => {
     localStorage.setItem('category','react');
-    location.href = 'duo-game';
+    location.href = '../pages/duo-game';
 })
 
 const id = localStorage.getItem('userId');

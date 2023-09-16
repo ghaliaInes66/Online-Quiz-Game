@@ -15,17 +15,17 @@ register.onclick = (e) => {
     body: JSON.stringify({ username, email, password })
   }).then(async response => {
     if(!response.ok) {
-      const err = await response.json();
-      const errorCard = document.querySelector('.error');
-      errorCard.textContent = err.message;
-      errorCard.style.visibility = 'visible';
+      // const err = await response.json();
+      // const errorCard = document.querySelector('.error');
+      // errorCard.textContent = err.message;
+      // errorCard.style.visibility = 'visible';
       throw Error(err.message);
     }
     return response.json();
   }).then(data => {
     localStorage.setItem('id', data.user.id);
     console.log(data);
-    window.location.href = '/home'
+    window.location.href = 'pages/home'
   }).catch(err => {
     console.error(err);
   })

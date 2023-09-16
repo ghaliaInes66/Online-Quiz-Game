@@ -3,11 +3,12 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="style/fake-game.css")
+    link(rel="stylesheet", href="../style/fake-game.css")
     script(src="/socket.io/socket.io.js")
     title 
   body 
     .container
+      h2 Enjoy 😅
       div.searching(style="visibility: hidden;") Searching ...
       button#start-game Start New Game
       .quiz 
@@ -26,8 +27,8 @@ html(lang="en")
             span -
             span.oponent oponent
               span.oponent-score 0
-      a(href="/home" style="visibility: hidden;" class="back-link") 
+      a(href="../pages/home" style="visibility: hidden;" class="back-link") 
         button(class="back-home") Back To Home
           
 
-    script(src="js/duoGame.js")
+    script(src="../js/duoGame.js")

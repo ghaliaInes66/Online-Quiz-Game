@@ -9,6 +9,7 @@ let game = {
 let firstUserScore = 0;
 let secondUserScore = 0;
 
+
 const setTimer = async (user, socket, timer, resolve) => {
   if(timer < 0) {
     console.log(game.firstUserScore);
@@ -32,6 +33,9 @@ const endDuoGame = async (user, socket, game) => {
     console.log(gameResult);
     socket.emit('game ended', gameResult);
     user.socket.emit('game ended', gameResult);
+    // firstUserScore = 0;
+    // firstUserScore = 0;
+    console.log('end of game');
   } catch (error) {
     console.error(error);
   }
@@ -40,6 +44,8 @@ const endDuoGame = async (user, socket, game) => {
 const startRound = async (user, socket, quizzesId, timer, numberOfRounds, currentGame) => {
   if(numberOfRounds < 1) {
     endDuoGame(user, socket, currentGame);
+    firstUserScore = 0;
+    secondUserScore = 0;
     return;
   }
   // Get Quizzes

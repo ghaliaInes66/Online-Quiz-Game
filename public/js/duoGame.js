@@ -18,7 +18,8 @@ startGame.onclick = () => {
   const searching = document.querySelector('.searching');
   searching.style.visibility = 'visible';
   const userId = localStorage.getItem('id');
-  socket.emit('new game', userId, 'Computer Science');
+  const category = localStorage.getItem('category');
+  socket.emit('new game', userId, category.toLowerCase());
   socket.on('start game', (game) => {
     searching.style.visibility = 'hidden';
     currentGame = game;
