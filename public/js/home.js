@@ -42,15 +42,5 @@ startreact.addEventListener('click' , () => {
     localStorage.setItem('category','react');
 })
 
-//get user info
-const id = localStorage.getItem('id');  
-const username=document.getElementById('username');
-const email=document.getElementById('email');
-
-fetch(`https://url-shortener-mugw.onrender.com/api/v1/users/${id}`)
-.then(res => res.json())
-.then(result => {
-    username.textContent=result.userName;
-    email.textContent=result.email;
-})
-.catch(err => console.log(err.message));
+const id = localStorage.getItem('userId');
+console.log(id);

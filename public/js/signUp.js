@@ -21,6 +21,7 @@ register.onclick = (e) => {
   }).then(data => {
     localStorage.setItem('id', data.user.id);
     console.log(data);
+    window.location.href = '/home'
   }).catch(err => {
     console.error(err);
   })
