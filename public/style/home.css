@@ -1,49 +1,143 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
+
+:root{
+  --blue:#0D0C1D;
+}
+
 body {
-  font-family: "Nunito", sans-serif;
-  background-color: #efe6fb;
-  /* overflow: hidden; */
-  /* position: relative; */
+  background-color: var(--blue);
+  overflow-y: hidden;
+  color: white;
 }
-.container {
+
+header{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 90px;
+  z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+nav{
+  width: 100%;
+  height: 100%;
   position: relative;
-}
-.zone_1 {
-  display: flex;
-}
-.logo > img {
-  margin-left: 100px;
-}
-.zone_2 {
-  margin-left: 150px;
-  margin-top: 30px;
-}
-.zone_2 > .profile_pic > img {
-  margin-bottom: 50px;
-}
-.zone_2 > .user_info {
-  line-height: 35px;
-}
-.zone_2 > .decennexion_btn {
-  margin-top: 40px;
-}
-.zone_2 > .decennexion_btn > a {
-  display: inline-block;
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ce91df;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.zone_3 {
   display: grid;
-  grid-auto-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  padding: 10px 30px;
+}
+
+nav img{
+  width: 150px;
+  height: 150px;
+  top: -40px;
+  position: absolute;
+}
+
+nav a{
+  justify-self: end;
+  color: white;
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns:25% 71% ;
+  gap: 4%;
+  padding: 30px;
+}
+
+section{
+  border: 2px solid #ce91df;
+  border-radius: 15px;
+}
+
+.profile{
+  height: 60vh;
+  display: grid;
+  justify-items: center;
+  padding: 20px;
+}
+
+.profile-image{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgb(101, 78, 163), rgb(234, 175, 200)); 
+  padding: 3px;
+}
+
+#logOut{
+  background-color: transparent;
+  border: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.quizes{
+  height: 85%;
+  overflow-y: scroll;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.quizes div{
+  width: 70%;
+  height: 200px;
+  border: 2px solid #ce91df;
+  border-radius: 15px;
+  display: grid;
+  justify-items: center;
+  padding: 30px;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.quizes div:hover{
+  transform: scale(1.1);
+}
+
+.start{
+  background-color: transparent;
+  border: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: yellow;
+  cursor: pointer;
+}
+.start:hover{
+  border-bottom: 2px solid yellow;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
+  height: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(36, 36, 36);
+  border-radius: 15px; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, rgb(101, 78, 163), rgb(234, 175, 200)); 
+  border-radius: 15px; 
 }

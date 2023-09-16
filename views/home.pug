@@ -1,48 +1,62 @@
 doctype html
-| PASTE YOUR HTML CODE HERE
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Home
-  link(rel='stylesheet' href='/style/home.css')
-.container
-  .zone_1
-    .logo
-      img(src='/images/quiz_logo.gif' alt='' width='200px' height='120px')
-  .zone_3
-    .quiz_1
-      a(href='#')
-        img(src='/images/art.png' alt='' width='80px')
-        p
-    .quiz_2
-      a(href='#')
-        img(src='/images/computer.png' alt='' width='80px')
-        p
-    .quiz_3
-      a(href='#')
-        img(src='/images/culture.png' alt='' width='80px')
-        p
-    .quiz_4
-      a(href='#')
-        img(src='/public/images/music.png' alt='' width='80px')
-        p
-    .quiz_5
-      a(href='#')
-        img(src='/public/images/sport.png' alt='' width='80px')
-        p
-    .quiz_6
-      a(href='#')
-        img(src='/public/images/science.png' alt='' width='80px')
-        p
-    .zone_2
-      .profile_pic
-        img(src='/public/images/profile.png' alt='photo de profile' width='150px')
-      .user_info
-        .username
-          span UserName:
-          |  Sirine Sehabi
-        .score
-          span Score:
-          |  3050
-      .decennexion_btn
-        a(href='/views/landing.pug') Decennexion
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/style/style.css")
+    link(rel="stylesheet", href="/style/home.css")
+    title Home
+  body 
+      header 
+        nav 
+          img(class="logo",src="/images/quiz_logo.gif")
+          a(href="#") add quiz 
+
+      main 
+        section.profile 
+          img(class="profile-image", src="/images/profile-image.jpg", alt="profile")
+          h4#username ines66 
+          p#email benghalia.ines@gmail.com
+          
+          button#logOut Log Out
+
+
+        section.quizes 
+          
+          #html 
+            img(src="/images/html.svg", alt="html")
+            h3 HTML
+            button(class="start start-html") Start 
+
+          #CSS 
+            img(src="/images/css.svg", alt="css")
+            h3 CSS
+            button(class="start start-css") Start
+
+          #js
+            img(src="/images/js.svg", alt="js")
+            h3 Java script 
+            button(class="start start-js") Start
+
+          #git
+            img(src="/images/git.svg", alt="git")
+            h3 Git
+            button(class="start start-git") Start
+
+          #c
+            img(src="/images/c.svg", alt="c")
+            h3 C 
+            button(class="start start-c") Start
+
+          #nodeJs
+            img(src="/images/nodejs.svg", alt="nodeJs")
+            h3 Node Js
+            button(class="start start-nodeJs") Start
+
+          #react
+            img(src="/images/react.svg", alt="react")
+            h3 React
+            button(class="start start-react") Start 
+
+      script(src="/js/home.js")   
+            
