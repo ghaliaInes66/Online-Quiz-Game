@@ -19,7 +19,12 @@ const duoGamePage = (req, res) => {
   res.render("online");
 };
 
+const quizzesPage = (req, res) => {
+  res.render("quizzes");
+};
+
 module.exports = {
   home,
-  duoGamePage
+  duoGamePage,
+  quizzesPage
 };
