@@ -35,7 +35,7 @@ const startDuoGame = (socket) => {
 
       socket.emit('start game', game);
       user.socket.emit('start game', game);
-      const timer = 20;
+      const timer = 30;
       const numberOfRounds = 5;
       return await startRound(
         user,
