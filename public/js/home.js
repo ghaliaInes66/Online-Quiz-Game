@@ -26,7 +26,7 @@ startcss.addEventListener('click', () => {
 });
 
 startjs.addEventListener('click', () => {
-  localStorage.setItem('category', 'js');
+  localStorage.setItem('category', 'javascript');
   location.href = '../pages/duo-game';
 });
 
