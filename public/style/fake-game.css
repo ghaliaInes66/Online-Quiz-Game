@@ -8,7 +8,10 @@
 
 body {
   height: 95vh;
-  background-color: #0D0C1D;
+  background-color: #0d0c1d;
+  /* background-image: url('https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_1280.jpg'); */
+  /* background-image: url('https://cdn.pixabay.com/photo/2016/08/17/02/25/digitization-1599552_1280.jpg'); */
+  /* background-image: url('https://cdn.pixabay.com/photo/2018/05/14/16/54/cyber-3400789_1280.jpg'); */
   font-family: 'Roboto';
   color: whitesmoke;
 }
@@ -33,7 +36,7 @@ body {
 }
 
 .question {
-  color: rgba(245, 245, 245, 0.600);
+  color: rgba(245, 245, 245, 0.6);
   font-size: 1.4rem;
   text-align: center;
   margin-bottom: 40px;
@@ -46,7 +49,7 @@ body {
 .option {
   padding: 10px;
   margin-bottom: 20px;
-  border: 2px solid #A69CAC;
+  border: 2px solid #a69cac;
   border-radius: 10px;
 }
 
@@ -62,7 +65,7 @@ body {
 
 .correct {
   color: rgb(0, 228, 228);
-  border: 2px solid rgb(0, 228, 228);;
+  border: 2px solid rgb(0, 228, 228);
 }
 
 .incorrect {
@@ -93,11 +96,12 @@ body {
   border-radius: 5px;
 }
 
-.you > span, .oponent span {
+.you > span,
+.opponent span {
   margin-left: 10px;
 }
 
-.back-home {
+.button {
   color: green;
   background-color: transparent;
   margin-top: 20px;
@@ -107,7 +111,7 @@ body {
   cursor: pointer;
 }
 
-.back-home:hover {
+.button:hover {
   background-color: green;
   color: whitesmoke;
   border: 3px solid whitesmoke;

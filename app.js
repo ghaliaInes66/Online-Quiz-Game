@@ -1,12 +1,12 @@
-// Initalize App
+// Initialize App
 const http = require('http');
-const express = require("express");
+const express = require('express');
 const app = express();
 const server = http.createServer(app);
 
 // External Packages
 require('dotenv').config();
-const cookieParcer = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const io = require('socket.io')(server);
 
 // Local Modules
@@ -26,9 +26,9 @@ app.set('views', __dirname + '/views');
 // Middlewares
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
-app.use(cookieParcer());
+app.use(cookieParser());
 
-// Import Routers
+// Import Routes
 const authRouter = require('./routes/auth');
 const pagesRouter = require('./routes/pages');
 const quizzesRouter = require('./routes/quizzes');
@@ -36,7 +36,7 @@ const SoloGamesRouter = require('./routes/soloGames');
 const publicRouter = require('./routes/public');
 
 // Create Routes
-app.use('/', publicRouter)
+app.use('/', publicRouter);
 app.use('/pages', authMiddleware, pagesRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/quizzes', authMiddleware, quizzesRouter);
@@ -48,8 +48,8 @@ io.on('connection', (socket) => {
   startDuoGame(socket);
   socket.on('disconnect', () => {
     console.log(`${socket.id} disconnected`);
-  })
-})
+  });
+});
 
 // Error Handler Middleware
 app.use(errorHandler);

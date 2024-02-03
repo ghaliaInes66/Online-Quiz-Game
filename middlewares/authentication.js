@@ -4,8 +4,8 @@ const authMiddleware = (req, res, next) => {
   try {
     const secret = process.env.JWT_SECRET;
     const token = req.cookies['token'];
-    if(!token) {
-      return res.redirect('/');
+    if (!token) {
+      return res.redirect('/login');
     }
     const payload = jwt.verify(token, secret);
     const { id, username } = payload;
@@ -14,6 +14,6 @@ const authMiddleware = (req, res, next) => {
   } catch (err) {
     console.error(err);
   }
-}
+};
 
-module.exports = authMiddleware
+module.exports = authMiddleware;

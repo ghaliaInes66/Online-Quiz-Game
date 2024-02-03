@@ -1,4 +1,3 @@
-
 const socket = io();
 
 const startGame = document.getElementById('start-game');
@@ -7,7 +6,7 @@ let currentGame;
 let option;
 
 // const startTimer = (timer) => {
-  
+
 //   console.log(timer);
 //   timer--;
 //   setTimeout(() => startTimer(timer), 1000);
@@ -30,9 +29,9 @@ startGame.onclick = () => {
       questionDom.textContent = quiz.question;
       const options = document.querySelectorAll('.option');
       const yourScore = document.querySelector('.your-score');
-      const oponentScore = document.querySelector('.oponent-score');
+      const oponentScore = document.querySelector('.opponent-score');
 
-      for(let i = 0; i < 4; i++) {
+      for (let i = 0; i < 4; i++) {
         options[i].classList.remove('clicked');
         options[i].classList.remove('correct');
         options[i].classList.remove('incorrect');
@@ -41,7 +40,7 @@ startGame.onclick = () => {
       // startTimer(10);
 
       quizDom.id = quiz._id;
-      if(userId === game.firstUser) {
+      if (userId === game.firstUser) {
         yourScore.textContent = score.firstUserScore;
         oponentScore.textContent = score.secondUserScore;
       } else {
@@ -50,15 +49,15 @@ startGame.onclick = () => {
       }
 
       let i = 0;
-      options.forEach(option => {
+      options.forEach((option) => {
         option.id = quiz.options[i]._id;
         option.textContent = quiz.options[i].option;
         option.dataset.isCorrect = quiz.options[i].isCorrect;
         option.addEventListener('click', () => {
           console.log(option);
           console.log(option.dataset.isCorrect);
-          for(let i = 0; i < 4; i++) {
-              option.classList.remove('clicked');
+          for (let i = 0; i < 4; i++) {
+            options[i].classList.remove('clicked');
           }
           option.classList.add('clicked');
           // if(!rightAnswerClicked || option.dataset.isCorrect === 'true') {
@@ -67,19 +66,19 @@ startGame.onclick = () => {
           // if(option.dataset.isCorrect === 'true') {
           //   rightAnswerClicked = true;
           // }
-        })
+        });
         i++;
       });
     });
     socket.on('timer', (timer) => {
-      if(timer === 0) {
+      if (timer === 0) {
         let score = 0;
         const userId = localStorage.getItem('id');
         const option = document.querySelector('.clicked');
         let optionId;
-        
-        if(option) {
-          if(option.dataset.isCorrect === 'true') {
+
+        if (option) {
+          if (option.dataset.isCorrect === 'true') {
             option.classList.add('correct');
             score = 1;
           } else {
@@ -99,11 +98,11 @@ startGame.onclick = () => {
       const timer = document.querySelector('.timer');
       const id = localStorage.getItem('id');
       const yourScore = document.querySelector('.your-score');
-      const oponentScore = document.querySelector('.oponent-score');
+      const oponentScore = document.querySelector('.opponent-score');
       let currentUserScore;
       let oponentUserScore;
 
-      if(game.firstUser === id) {
+      if (game.firstUser === id) {
         yourScore.textContent = game.firstUserScore;
         oponentScore.textContent = game.secondUserScore;
         currentUserScore = game.firstUserScore;
@@ -114,27 +113,28 @@ startGame.onclick = () => {
         currentUserScore = game.secondUserScore;
         oponentUserScore = game.firstUserScore;
       }
-      
-      if(currentUserScore > oponentUserScore) {
+
+      if (currentUserScore > oponentUserScore) {
         timer.textContent = 'Win';
+        timer.style.color = 'green';
       }
 
-      if(currentUserScore === oponentUserScore) {
+      if (currentUserScore === oponentUserScore) {
         timer.textContent = 'Draw';
+        timer.style.color = 'grey';
       }
 
-      if(currentUserScore < oponentUserScore) {
+      if (currentUserScore < oponentUserScore) {
         timer.textContent = 'Loose';
+        timer.style.color = 'red';
       }
 
-      const backButton = document.querySelector('.back-link');
+      const backButton = document.querySelector('.reset-link');
       backButton.style.visibility = 'visible';
-      
     });
   });
-  
-}
+};
 
 socket.on('connect', () => {
   console.log(`Connected to server`);
-})
+});

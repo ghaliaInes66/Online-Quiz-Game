@@ -8,11 +8,11 @@ html(lang="en")
     title 
   body 
     .container
-      h2 Enjoy 😅
+      //- h2 Enjoy 😅
       div.searching(style="visibility: hidden;") Searching ...
-      button#start-game Start New Game
+      button(id="start-game" class="button") Start New Game
       .quiz 
-        .timer 30
+        .timer 20
         .question -----------?
         .options 
           .option -----------
@@ -25,10 +25,10 @@ html(lang="en")
             span.you you
               span.your-score 0
             span -
-            span.oponent oponent
-              span.oponent-score 0
-      a(href="../pages/home" style="visibility: hidden;" class="back-link") 
-        button(class="back-home") Back To Home
+            span.opponent opponent
+              span.opponent-score 0
+      a(href="../pages/duo-game" style="visibility: hidden;" class="reset-link") 
+        button(class="reset button") Reset
           
 
     script(src="../js/duoGame.js")
